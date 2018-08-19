@@ -1,3 +1,5 @@
+import java.util.*
+
 fun main(args: Array<String>) {
     println("result: " + max(2, 3))
     println("result2: " + max2(2, 3))
@@ -26,6 +28,8 @@ fun main(args: Array<String>) {
 
     val shape = Rectangle(5, 6)
     println("Is this a square? ${shape.isSquare}")
+
+    println("random rectangle: ${createRandomRectagle().isSquare}")
 }
 
 fun max(a: Int, b: Int): Int {
@@ -47,4 +51,9 @@ class Rectangle(val height: Int, val width: Int) {
     get() {
         return height == width
     }
+}
+
+fun createRandomRectagle(): Rectangle {
+    val random = Random()
+    return Rectangle(random.nextInt(), random.nextInt())
 }
