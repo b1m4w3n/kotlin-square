@@ -5,7 +5,7 @@ apply plugin: 'application'
 mainClassName = "MainKt"
 
 buildscript {
-    ext.kotlin_version = '1.2.60'
+    ext.kotlin_version = '1.2.61'
     repositories {
         mavenCentral()
     }
@@ -13,6 +13,11 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.7'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
