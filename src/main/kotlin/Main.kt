@@ -13,6 +13,7 @@ fun main(args: Array<String>) {
     else {
         message = "Failure"
     }
+    println("message: $message")
 
     val languages = arrayListOf("Java")
     languages.add("Kotlin")
@@ -30,6 +31,13 @@ fun main(args: Array<String>) {
     println("Is this a square? ${shape.isSquare}")
 
     println("random rectangle: ${createRandomRectagle().isSquare}")
+
+    println(Color.BLUE.rgb())
+
+    println(getMnemonic(Color.YELLOW))
+
+//    var answer = 42
+//    answer = "no answer"
 }
 
 fun max(a: Int, b: Int): Int {
@@ -57,3 +65,24 @@ fun createRandomRectagle(): Rectangle {
     val random = Random()
     return Rectangle(random.nextInt(), random.nextInt())
 }
+
+enum class Color (
+        val r: Int, val g: Int, val b: Int
+) {
+    RED(255, 0, 0), ORANGE(255, 165, 0),
+    YELLOW(255, 255, 0), GREEN(0,255, 0), BLUE(0, 0, 255),
+    INDIGO(75, 0, 130), VIOLET(238,130,238);
+
+    fun rgb()= (r * 256 + g) * 256 + b
+}
+
+fun getMnemonic(color: Color) =
+        when (color) {
+            Color.RED -> "Richard"
+            Color.ORANGE -> "Of"
+            Color.YELLOW -> "York"
+            Color.GREEN -> "Gave"
+            Color.BLUE -> "Battle"
+            Color.INDIGO -> "In"
+            Color.VIOLET -> "Vain"
+        }
